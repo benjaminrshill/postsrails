@@ -1,6 +1,6 @@
 <?php
 
-function fenceCount($postCount, $railCount) {
+function fenceCount(int $postCount, int $railCount) : string {
     $post = 10;
     $rail = 150;
     if (is_numeric($postCount) && is_numeric($railCount)) {
@@ -23,7 +23,7 @@ function fenceCount($postCount, $railCount) {
     }
 }
 
-function fenceLength($desiredLength) {
+function fenceLength($desiredLength) : string {
     $post = 10;
     $rail = 150;
     if ($desiredLength < 0) {
