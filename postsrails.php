@@ -23,7 +23,7 @@ function fenceCount(int $postCount, int $railCount) : string {
     }
 }
 
-function fenceLength($desiredLength) : string {
+function fenceLength(number $desiredLength) : string {
     $post = 10;
     $rail = 150;
     if ($desiredLength < 0) {
