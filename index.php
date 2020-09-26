@@ -5,35 +5,47 @@
 </head>
 <body>
 
-<?php require 'postsrails.php' ?>
+<?php require 'postsrails.php'; ?>
 
-<form action="" method="post">
+<form method="post">
+
     <h4>How many posts and railings do you have?</h4>
-    Posts: <input type="text" name="postCount" />
-    Railings: <input type="text" name="railCount" />
+
+    <label for="posts">Posts:</label>
+    <input id="posts" type="number" name="postCount" min="2" required="required" />
+
+    <label for="posts">Railings:</label>
+    <input id="railings" type="number" name="railCount" min="1" required="required" />
+
     <input type="submit" name="submitCount" />
+
 </form>
 
 <p><?php
     if (isset($_POST['submitCount'])) {
         $postCount = $_POST['postCount'];
         $railCount = $_POST['railCount'];
-        echo fenceCount($postCount, $railCount);
+        echo fenceCount($postCount, $railCount, $post, $rail);
     }
     ?></p>
 
 <br />
 
-<form action="" method="post">
+<form method="post">
+
     <h4>How long would you like your fence to be?</h4>
-    Length (metres): <input type="text" name="desiredLength" />
+
+    <label for="length">Length (metres):</label>
+    <input id="length" type="number" name="desiredLength" min="1.7" step="0.1" required="required" />
+
     <input type="submit" name="submitLength" />
+
 </form>
 
 <p><?php
     if (isset($_POST['submitLength'])) {
         $desiredLength = $_POST['desiredLength'];
-        echo fenceLength($desiredLength);
+        echo fenceLength($desiredLength, $post, $rail);
     }
     ?></p>
 
